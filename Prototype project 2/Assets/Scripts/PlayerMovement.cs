@@ -10,10 +10,11 @@ public class PlayerMovement : MonoBehaviour {
     public float spdMultPos = 1.5f;
     public float spdMultNeg = .75f;
     public float rotateSpeed = 15;
-    
+    public float pushDown = 15;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 
         PlayerRb = GetComponent<Rigidbody>();
         
@@ -23,9 +24,15 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
     {
         CheckWASDInput();
+        //PlayerRb.velocity = transform.down * speed * 25;
 
+        //PlayerRb.AddForce(Vector3.down * pushDown);
     }
 
+    private void FixedUpdate()
+    {
+        transform.position += Vector3.down * pushDown * Time.deltaTime;
+    }
 
     private void CheckWASDInput()
     {
