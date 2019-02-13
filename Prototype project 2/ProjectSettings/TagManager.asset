@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
-  - Attack
-  - Defense
+  - Projectile
+  - Thruster
+  - Wall
   layers:
   - Default
   - TransparentFX

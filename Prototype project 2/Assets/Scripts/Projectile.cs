@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Projectile : MonoBehaviour {
 
     public int health = 100;
 
@@ -13,11 +13,15 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject projectile = Instantiate(Resources.Load("Projectile"), transform.position, transform.rotation) as GameObject;
+            projectile.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
+        }
+    }
 
     void OnTriggerEnter(Collider other) {
-         if (other.tag == "Defense")
+         if (other.tag == "Thruster")
         {
             if (health < 100)
             {
@@ -38,6 +42,11 @@ public class Health : MonoBehaviour {
                         health = 100;
                     }
                 }
+            }
+
+            if (other.tag == "Wall")
+            {
+                Destroy(other.gameObject);
             }
         }
     }
