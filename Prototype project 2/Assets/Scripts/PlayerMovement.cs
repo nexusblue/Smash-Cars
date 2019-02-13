@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     public Vector3 forward;
     Rigidbody PlayerRb ;
     public float speed = 3.0f;
-    public float spdMultPos = 1.5f;
+    public static float spdMultPos = 1.25f;
     public float spdMultNeg = .75f;
     public float rotateSpeed = 15;
     public float pushDown = 15;
@@ -25,8 +25,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         CheckWASDInput();
         //PlayerRb.velocity = transform.down * speed * 25;
-
         //PlayerRb.AddForce(Vector3.down * pushDown);
+        //Debug.Log(spdMultPos);
+
+
     }
 
     private void FixedUpdate()
@@ -58,5 +60,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             PlayerRb.velocity = transform.forward * speed;
         }
+        //Debug.Log("Player1 Speed: " + PlayerRb.velocity.z);
+
     }
 }

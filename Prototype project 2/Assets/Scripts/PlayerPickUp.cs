@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerPickUp : MonoBehaviour {
 
+    public float speedUp = 0.1f; 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,8 +18,16 @@ public class PlayerPickUp : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Coin") {
+        //Check for if tag is player one or two first
+        
+        if (other.tag == "Coin" && gameObject.tag == "Player")  {
             Destroy(other.gameObject);
+            PlayerMovement.spdMultPos += speedUp;
+        }
+        if (other.tag == "Coin" && gameObject.tag == "Player2")
+        {
+            Destroy(other.gameObject);
+            PlayerMove2.spdMultPos += speedUp;
         }
     }
 

@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 54814427721352354}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,8 +112,8 @@ GameObject:
   - component: {fileID: 4573511372114852}
   - component: {fileID: 33504205138695008}
   - component: {fileID: 23826477361694768}
-  - component: {fileID: 65757274990939424}
   - component: {fileID: 64747893006146760}
+  - component: {fileID: 136383981758059892}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -140,8 +140,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382516400060578}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.03, y: 2.89, z: 9}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 45, y: 2.89, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4103326957502958}
@@ -151,7 +151,7 @@ Transform:
   - {fileID: 4835066982462206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4573511372114852
 Transform:
   m_ObjectHideFlags: 1
@@ -232,7 +232,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -259,7 +259,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 36897650d26974a749e380db58caa371, type: 2}
+  - {fileID: 2100000, guid: 6d7df218f690249eeba0e500c5c20eb1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -435,7 +435,7 @@ MeshCollider:
   m_GameObject: {fileID: 1758808250215976}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -461,7 +461,7 @@ BoxCollider:
   m_GameObject: {fileID: 1213691447994030}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.019615436, y: 0.020000007, z: 0.025990501}
   m_Center: {x: 0.0001922926, y: -0.0000000022924864, z: -0.00019195896}
@@ -473,22 +473,10 @@ BoxCollider:
   m_GameObject: {fileID: 1213691447994030}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020007875, y: 0.020000007, z: 0.028878476}
   m_Center: {x: -0.03607539, y: -0.0000000022924862, z: -0.23070179}
---- !u!65 &65757274990939424
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1758808250215976}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.020000013, y: 0.017898632, z: 0.021776635}
-  m_Center: {x: -3.3934707e-17, y: 0.0010506762, z: -0.021313595}
 --- !u!65 &65771064997298054
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -497,7 +485,7 @@ BoxCollider:
   m_GameObject: {fileID: 1213691447994030}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.019615436, y: 0.020000007, z: 0.020384982}
   m_Center: {x: 0.00019229522, y: -0.000000002292486, z: -0.23494835}
@@ -509,7 +497,7 @@ BoxCollider:
   m_GameObject: {fileID: 1213691447994030}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.020007871, y: 0.020000007, z: 0.02535159}
   m_Center: {x: -0.0360754, y: -0.0000000022924866, z: -0.0025021338}
@@ -532,11 +520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forward: {x: 0, y: 0, z: 0}
-  speed: 12
-  spdMultPos: 2
+  speed: 20
   spdMultNeg: 0.5
   rotateSpeed: 90
-  pushDown: 4
+  pushDown: 8
 --- !u!114 &114457216944518202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -548,3 +535,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd092800fd1ef4f03a10510d6cea2c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedUp: 0.2
+--- !u!136 &136383981758059892
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758808250215976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0087505765
+  m_Height: 0.044684358
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.0000000028049247, z: -0.014}
