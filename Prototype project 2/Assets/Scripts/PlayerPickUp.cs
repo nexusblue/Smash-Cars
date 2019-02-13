@@ -23,11 +23,16 @@ public class PlayerPickUp : MonoBehaviour {
         if (other.tag == "Coin" && gameObject.tag == "Player")  {
             Destroy(other.gameObject);
             PlayerMovement.spdMultPos += speedUp;
+            Instantiate(Resources.Load("CoinEffect"));
+
         }
         if (other.tag == "Coin" && gameObject.tag == "Player2")
         {
             Destroy(other.gameObject);
             PlayerMove2.spdMultPos += speedUp;
+            Instantiate(Resources.Load("CoinEffect"));
+
+
         }
     }
 
