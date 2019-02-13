@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove2 : MonoBehaviour {
-
+public class BothPlayerMove : MonoBehaviour
+{
     public Vector3 forward;
     Rigidbody PlayerRb;
     public float speed = 3.0f;
@@ -24,10 +24,15 @@ public class PlayerMove2 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        CheckWASDInput();
-        //PlayerRb.velocity = transform.down * speed * 25;
-        //PlayerRb.AddForce(Vector3.down * pushDown);
+        if (gameObject.tag == "Player") {
+            CheckWASDInput();
+        }
 
+        if (gameObject.tag == "Player2")
+        {
+            CheckArrowInput();
+        }
+            
 
     }
 
@@ -37,6 +42,34 @@ public class PlayerMove2 : MonoBehaviour {
     }
 
     private void CheckWASDInput()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            //transform.Rotate(0,0,rotateSpeed * Time.deltaTime) ;
+            transform.Rotate(Vector3.down, rotateSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
+        }
+        //Test for speed booster
+        if (Input.GetKey(KeyCode.W))
+        {
+            PlayerRb.velocity = transform.forward * speed * spdMultPos;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            PlayerRb.velocity = transform.forward * speed * spdMultNeg;
+        }
+        else
+        {
+            PlayerRb.velocity = transform.forward * speed;
+        }
+        //Debug.Log("Player1 Speed: " + PlayerRb.velocity.z);
+
+    }
+
+    private void CheckArrowInput()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -61,6 +94,8 @@ public class PlayerMove2 : MonoBehaviour {
             PlayerRb.velocity = transform.forward * speed;
         }
         //Debug.Log("Player2 Speed: " + PlayerRb.velocity.z);
-        
+
     }
+
+
 }
