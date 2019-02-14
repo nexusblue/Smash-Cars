@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BothPlayerMove : MonoBehaviour
 {
@@ -19,12 +20,14 @@ public class BothPlayerMove : MonoBehaviour
 
         PlayerRb = GetComponent<Rigidbody>();
 
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "Player") {
+        if (gameObject.tag == "Player")
+        {
             CheckWASDInput();
         }
 
@@ -32,7 +35,7 @@ public class BothPlayerMove : MonoBehaviour
         {
             CheckArrowInput();
         }
-            
+
 
     }
 
@@ -96,6 +99,5 @@ public class BothPlayerMove : MonoBehaviour
         //Debug.Log("Player2 Speed: " + PlayerRb.velocity.z);
 
     }
-
 
 }

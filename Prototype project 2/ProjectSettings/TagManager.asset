@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player2
+  - Wall
+  - Coin
+  - Projectile1
+  - Projectile2
+  - Projectile
   layers:
   - Default
   - TransparentFX
