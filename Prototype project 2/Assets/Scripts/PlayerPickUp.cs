@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PlayerPickUp : MonoBehaviour {
 
+    public AudioClip coinClip;
+    public AudioSource coinSource;
+
     public float speedUp = 0.1f; 
 
 	// Use this for initialization
 	void Start () {
-		
+        coinSource.clip = coinClip;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +23,9 @@ public class PlayerPickUp : MonoBehaviour {
     {
         //Check for if tag is player one or two first
         
-        if (other.tag == "Coin" && gameObject.tag == "Player")  {
+        if (other.tag == "Coin" && gameObject.tag == "Player")
+        {
+            coinSource.Play();
             Destroy(other.gameObject);
             PlayerMovement.spdMultPos += speedUp;
             Instantiate(Resources.Load("CoinEffect"));
