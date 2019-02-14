@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 54814427721352354}
   - component: {fileID: 1725621018}
   - component: {fileID: 4724597704700227995}
+  - component: {fileID: 1728459653}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -322,6 +323,19 @@ MonoBehaviour:
   spdMultNeg: 0.5
   rotateSpeed: 90
   pushDown: 8
+--- !u!114 &1728459653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382516400060578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f1461ee863e47a18f0b79f8fee1de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1HP: {fileID: 0}
 --- !u!1 &1383466968063770
 GameObject:
   m_ObjectHideFlags: 0
