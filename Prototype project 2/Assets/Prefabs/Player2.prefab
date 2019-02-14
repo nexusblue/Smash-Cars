@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd092800fd1ef4f03a10510d6cea2c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: 88c99868026e1d142ae260c8590db95f, type: 3}
+  coinSource: {fileID: 0}
   speedUp: 0.2
 --- !u!54 &54201685526464058
 Rigidbody:
@@ -214,6 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67474c490bce4833a88653b244780b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextTimeToFire: 1
+  fireRate: 5
 --- !u!114 &368823709
 MonoBehaviour:
   m_ObjectHideFlags: 0
