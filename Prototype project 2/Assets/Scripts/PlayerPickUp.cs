@@ -33,6 +33,7 @@ public class PlayerPickUp : MonoBehaviour {
         }
         if (other.tag == "Coin" && gameObject.tag == "Player2")
         {
+            coinSource.Play();
             Destroy(other.gameObject);
             PlayerMove2.spdMultPos += speedUp;
             Instantiate(Resources.Load("CoinEffect"), other.transform.position, other.transform.rotation);

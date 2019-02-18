@@ -2,25 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class HealthPlayer : MonoBehaviour
 {
-    private int health = 100;
+    public int health = 100;
 
     Text text;
     public Transform P1HP;
+    public GameObject P2Win;
+    public GameObject GameAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         P1HP.GetComponent<Text>().text = "Player 1 Hp:" + health.ToString();
-    }
 
-    // Update is called once per frame
-    void Update()
+
+
+}
+
+// Update is called once per frame
+void Update()
     {
         P1HP.GetComponent<Text>().text = "Player 1 Hp:" + health.ToString();
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            SceneManager.LoadScene("MainMenu");
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("Game Quit");
+
+        }
+
+
+
 
     }
 
@@ -34,9 +52,14 @@ public class HealthPlayer : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
-                Time.timeScale = 0;
+                P2Win.SetActive(true);
+                GameAudio.SetActive(false);
+                //Time.timeScale = 0;
+
             }
 
         }
     }
+
+
 }

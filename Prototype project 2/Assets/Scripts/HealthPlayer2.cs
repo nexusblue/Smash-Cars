@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class HealthPlayer2 : MonoBehaviour
 {
-	private int health = 100;
+	public int health = 100;
 
 
     Text text;
     public Transform P2HP;
-
+    public GameObject P1Win;
+    public GameObject GameAudio;
 
 
     // Start is called before the first frame update
@@ -24,6 +27,16 @@ public class HealthPlayer2 : MonoBehaviour
     void Update()
     {
         P2HP.GetComponent<Text>().text = "Player 2 Hp:" + health.ToString();
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene("MainMenu");
+
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            Debug.Log("Game Quit");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +50,8 @@ public class HealthPlayer2 : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            Time.timeScale = 0;
+            P1Win.SetActive(true);
+            GameAudio.SetActive(false);
         }
     }
 }

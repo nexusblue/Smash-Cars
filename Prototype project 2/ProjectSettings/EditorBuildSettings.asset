@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/HenryScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1ffdb68e36a0948b3a5342deb2cd35cc
+  - enabled: 1
+    path: Assets/Scenes/KartScene.unity
+    guid: beeb5519a9b65448ab22a6415d76aaff
+  - enabled: 1
+    path: Assets/Scenes/RocketKartScene.unity
+    guid: 8e725cb6b01f4406fa9b52dd15b3ee86
   m_configObjects: {}

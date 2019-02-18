@@ -145,8 +145,9 @@ GameObject:
   - component: {fileID: 114144752417512232}
   - component: {fileID: 54201685526464058}
   - component: {fileID: 933622084}
-  - component: {fileID: 368823709}
   - component: {fileID: 1712201944}
+  - component: {fileID: 368823709}
+  - component: {fileID: 3269401044889244389}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -217,7 +218,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTimeToFire: 1
-  fireRate: 5
+  fireRate: 7
+--- !u!114 &1712201944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236308834642582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a727eb289dc0e4d9aa028433508d4f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P2HP: {fileID: 0}
+  P1Win: {fileID: 0}
+  GameAudio: {fileID: 0}
 --- !u!114 &368823709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,19 +251,22 @@ MonoBehaviour:
   spdMultNeg: 0.5
   rotateSpeed: 90
   pushDown: 8
---- !u!114 &1712201944
+--- !u!114 &3269401044889244389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236308834642582}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a727eb289dc0e4d9aa028433508d4f2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ba6dad2200d4403d9def8714ee38dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P2HP: {fileID: 0}
+  forward: {x: 0, y: 0, z: 0}
+  speed: 15
+  spdMultNeg: 0.5
+  rotateSpeed: 90
 --- !u!1 &1338558537380878
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +520,7 @@ Camera:
     y: 0
     width: 1
     height: 0.5
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -528,7 +547,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797810907933398}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &1819447209886062
 GameObject:
   m_ObjectHideFlags: 0
